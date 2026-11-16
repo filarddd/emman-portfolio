@@ -7,9 +7,27 @@
 --navy: #1e3a6e;
 --tint: #e3eaf8;
 --line: #d9d5c9;
+--btn: #2a5caa;
 
 --font-head: "Playfair Display", Georgia, serif;
 --font-body: "Inter", system-ui, sans-serif;
+}
+
+:root[data-theme="dark"] {
+--bg: #14171f;
+--surface: #1c212c;
+--ink: #f1efe9;
+--text: #b8bcc6;
+--blue: #7ea6ec;
+--navy: #a9c1f0;
+--tint: #202c47;
+--line: #343b4a;
+
+color-scheme: dark;
+}
+
+:root {
+color-scheme: light;
 }
 
 * {
@@ -82,6 +100,7 @@ color: var(--blue);
 
 .navbar nav {
 display: flex;
+align-items: center;
 gap: 1.5rem;
 }
 
@@ -152,8 +171,8 @@ border: 1.5px solid var(--ink);
 }
 
 .btn-primary {
-background: var(--blue);
-border-color: var(--blue);
+background: var(--btn);
+border-color: var(--btn);
 color: #fff;
 }
 
@@ -597,6 +616,94 @@ width: 100%;
 cursor: pointer;
 font: inherit;
 font-weight: 600;
+}
+
+/* Download CV */
+.about-actions {
+    margin-top: 2rem;
+}
+
+/* Footer */
+.footer {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 0.5rem 1rem;
+max-width: 1100px;
+margin: 0 auto;
+padding: 2rem 1.5rem;
+font-size: 0.9rem;
+}
+
+.footer p {
+margin: 0;
+}
+
+/* Form status message */
+.form-status {
+margin: 1rem 0 0;
+font-size: 0.95rem;
+font-weight: 500;
+color: var(--blue);
+}
+
+.form-status:empty {
+display: none;
+}
+
+/* Active nav link */
+.navbar nav a {
+padding-bottom: 2px;
+border-bottom: 2px solid transparent;
+}
+
+.navbar nav a.active {
+color: var(--blue);
+border-bottom-color: var(--blue);
+}
+
+/* Accessibility */
+a:focus-visible,
+button:focus-visible {
+outline: 3px solid var(--blue);
+outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+    scroll-behavior: auto;
+}
+}
+
+/* Theme toggle */
+.theme-toggle {
+display: inline-grid;
+place-items: center;
+width: 38px;
+height: 38px;
+padding: 0;
+background: transparent;
+color: var(--ink);
+border: 1.5px solid var(--line);
+border-radius: 50%;
+cursor: pointer;
+}
+
+.theme-toggle:hover {
+border-color: var(--blue);
+color: var(--blue);
+}
+
+.theme-toggle .icon-sun {
+display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+display: block;
 }
 
 /* Mobile */
